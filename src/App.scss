@@ -1,0 +1,107 @@
+$color-gray : #eee;
+
+@mixin basic-line-rm{
+    background: none;
+    border: none;
+    outline: none;
+
+    letter-spacing: 1px;
+
+    &:hover{background-color: $color-gray;}
+}
+
+.container{
+    width: 450px;
+    margin: 30px auto 0;
+    border: 3px solid steelblue;
+    >header{
+        >h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85px;
+            color: #fff;
+            letter-spacing: 2px;
+            background-color: steelblue;
+        }
+
+        >form{
+            display: flex;
+            >input{
+                @include basic-line-rm;
+                //flex:[flex-grow][flex-shrink][flex-basis]
+                //flex-grow - 컨테이너에 남는 공간이 발생하면 지정한 비율대로 크기를 늘림
+                //flex-shrink - 컨테이너의 공간이 부족할때 지정한 비율대로 크기를 줄임
+                //flex-basis - 기본크기를 지정, 0으로 하면 grow와 shrink에서 설정한 비율대로 적용됨
+                //flex:1 1 0; 은 flex:1; 과 같다.
+                flex:1 1 0;
+                height: 55px;
+                font-size: 16px;
+                text-indent: 10px;
+                background-color: #e7bba9;
+            }
+
+            >button{
+                @include basic-line-rm;
+                width: 50px;
+                font-size: 14px;
+                background-color: #fcd970;
+            }
+
+
+
+        }//end of form
+    }//end of header
+
+    >section{
+        overflow: hidden;
+        position: relative;
+        height: 500px;
+
+        >ul{
+            overflow-y: scroll;
+            position: absolute;
+            top: 0;
+            right: -17px;
+            width: calc(100% + 17px);
+            height: 500px;
+
+            >li{
+                display: flex;
+                align-items: center;
+                padding: 20px 15px 15px;
+                border-bottom: 1px solid $color-gray;
+                box-sizing: border-box;
+
+                &:hover{
+                    background-color: $color-gray;
+                    cursor: pointer;
+                }
+
+                >h2.tit{
+                    flex: 1;//flex:1 1 0; 과 같다.
+                    order:20;
+                    margin: 0 10px;
+                    font-size: 16px;
+
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    &.done{text-decoration: line-through;}
+                }//end of h2
+
+                >input.done{
+                    order:10;
+                }
+
+                >button.del{
+                    order:30;
+                    width: 45px;
+                    height: 35px;
+                }
+            }//end of li
+        }//end of ul
+    }//end of section
+
+}
