@@ -1,10 +1,15 @@
 import TodoItem from "./TodoItem";
 
-const TodoBody = ()=>{
+
+const TodoBody = ({todos, fnChk, fnDel})=>{
     return (
         <section>
             <ul>
-                <TodoItem num={1} />
+                {
+                    todos.map(todo=><TodoItem todo={todo} fnChk={fnChk} fnDel={fnDel} key={todo.id} />)
+                }
+
+                {/* <TodoItem num={1} />
                 <TodoItem num={2} />
                 <TodoItem num={3} />
                 <TodoItem num={4} />
@@ -14,7 +19,7 @@ const TodoBody = ()=>{
                 <TodoItem num={8} />
                 <TodoItem num={9} />
                 <TodoItem num={10} />
-                <TodoItem num={11} />
+                <TodoItem num={11} /> */}
             </ul>
         </section>
     );

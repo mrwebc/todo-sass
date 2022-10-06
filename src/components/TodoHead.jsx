@@ -1,10 +1,10 @@
 import TodoInsert from "./TodoInsert";
 
-const TodoHead = (pros)=>{
+const TodoHead = ({fnAdd})=>{
     return (
         <header>
             <h1>일정관리</h1>
-            <TodoInsert />
+            <TodoInsert fnAdd={fnAdd} />
         </header>
     );
 }
