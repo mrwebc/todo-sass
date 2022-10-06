@@ -6,9 +6,13 @@ import TodoHead from "./TodoHead";
 const TodoContainer = ()=>{
 
     const [todos, setTodos] = useState([
-        {id:1, title:'오늘은 리액트를 공부할 거에요~!', done:true},
-        {id:2, title:'내일도 리액트를 공부할 거에요~!', done:false},
-        {id:3, title:'모레도 리액트를 공부할 거에요~!', done:false},
+        {id:1, title:'리액트 컴포지션 연습', done:false},
+        {id:2, title:'프로필 사이트 제작하기', done:false},
+        {id:3, title:'자바스크립트를 활용한 프로젝트', done:false},
+        {id:4, title:'웹표준을 준수한 시멘틱 페이지', done:false},
+        {id:5, title:'포트폴리오 팀프로젝트', done:false},
+        {id:6, title:'리액트를 활용한 데이터 핸들링', done:false},
+        {id:7, title:'다른 사람이 말하는 나 컨텐츠 작성', done:false}
     ]);
 
     const nexdId = useRef(4);
